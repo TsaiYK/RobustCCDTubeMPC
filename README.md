@@ -1,5 +1,5 @@
 # RobustCCD_TubeMPC
-Code instruction and details of the files
+This repository is the code instruction, detailing the functions and the files from the ACC paper: Tsai, Y.-K., and Malak Jr., R. J., 2023. ``Robust control codesign using tube-based model predictive control”. In 2023 American Control Conference (ACC), IEEE.
 
 # Main files (you can directly run)
 1. main_p3ga & main_p3ga_satellite: run for finding non-dominated solutions. Here you have three options for design strategies: (1) control design only, (2) sequential design (plant design and control design), and (3) control co-design (CCD).
