@@ -14,6 +14,6 @@ Code instruction and details of the files
 5. plot_Pareto: to plot approximate Pareto fronts for the results by P3GA and all design strategies
 
 # Other packages
-1. P3GA: Galvan, E., & Malak, R. J. (2015). P3ga: An algorithm for technology characterization. Journal of Mechanical Design, 137(1), 011401.
-2. MPT3: https://www.mpt3.org/
+1. Solver P3GA: Galvan, E., & Malak, R. J. (2015). P3ga: An algorithm for technology characterization. Journal of Mechanical Design, 137(1), 011401.
+2. MPT3: Please go to https://www.mpt3.org/Main/Installation to know how to install. After successful installation, you will see `tbxmanager' folder in your directory
 3. folder `src' is based on Robust Tube-Based MPC from https://github.com/HiroIshida/robust-tube-mpc
