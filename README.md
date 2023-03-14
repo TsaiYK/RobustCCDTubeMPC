@@ -7,6 +7,8 @@ Code Instruction
 
   b.	main_example_tubeMPC_w_disturbance & main_example_tubeMPC_w_disturbance_satellite: run for showing the actual trajectories if we add random disturbances in simulations; there are some parameters you should provide before running the codes: 
     (1) design variables for plant and gain, (2) epsilon_mag: magnitude of control disturbance, (3) w_mag: : magnitude of external disturbance, (4) N: Time horizon, and (5) n: number of randomized disturbance sequences
+
+
 2.	Function files (used in the main files)
 
   a.	runobjconstr_p3ga & runobjconstr_p3ga_satellite: functions for running P3GA by combining the objective functions (no additional function evaluations are needed if we have already obtained the solutions to reduce redundancy)
