@@ -38,9 +38,6 @@ else
 
     % construct disturbance Linear system
     disturbance_system = DisturbanceLinearSystem(A, B, Q, R, BE_plus_W, K);
-%     eig_Ak = eig(disturbance_system.Ak);
-%     real_eig_Ak = real(eig_Ak);
-%     real_eig_Ak = real_eig_Ak(1);
     Ak_inf = disturbance_system.Ak^1e3;
     if det(Ak_inf)>1e-2
         J = NaN; SizeZ = NaN;
