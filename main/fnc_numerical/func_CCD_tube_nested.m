@@ -85,7 +85,11 @@ else
             if infeasible_mpc
                 J = NaN;
             else
-                J = sum(L);
+                if x_nom(:,end)<=mpc.Xmpi_robust
+                    J = sum(L);
+                else
+                    J = NaN;
+                end
             end
             clear('mpc','disturbance_system')
         end
