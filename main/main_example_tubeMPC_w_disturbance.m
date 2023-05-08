@@ -25,7 +25,7 @@ R = 0.1;
 Klqr = -dlqr(A,B,Q,R); % please keep in mind that a "minus" should be included
 K = design_p_c(2:3);
 iniCon = [-7; -2];
-N = 40; % simulation period
+N = 20; % simulation period
 
 % bound (magnitude) of disturbances
 w_mag = 0;
