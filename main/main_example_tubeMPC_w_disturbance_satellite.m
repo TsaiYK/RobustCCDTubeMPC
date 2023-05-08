@@ -29,7 +29,7 @@ R = 1e-4;
 Klqr = -dlqr(A,B,Q,R); % please keep in mind that a "minus" should be included
 K = design_p_c(3:4);
 iniCon = [deg2rad(25); 0];
-N = 20;
+N = 20; % simulation period
 
 % bound (magnitude) of disturbances
 w_mag = 0;
@@ -91,7 +91,6 @@ for k = 1:n
         [u_next(i), x_nom_tmp, u_nom_tmp] = mpc.solve(x(:,i));
         x_nom(:,i+1) = mpc.solution_cache.x_nominal_seq(:,2);
         u_bar(i) = mpc.solution_cache.u_nominal_seq(:,1);
-%         u_next(i) = u_bar(i)+K*(x(:,i)-x_nom(:,i));
         [x(:,i+1),~] = disturbance_system.propagate(x(:,i), u_next(i), w{k}(:,i)); % additive disturbance is considered inside the method 
         L(i) = x(:,i)'*Q*x(:,i)+u_next(:,i)'*R*u_next(:,i); % integrand
     end
