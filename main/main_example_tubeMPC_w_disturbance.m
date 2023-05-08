@@ -4,7 +4,7 @@ close all
 
 addpath('../src/')
 addpath('../src/utils/')
-    
+
 set(0,'DefaultTextInterpreter','latex'); % change the text interpreter
 set(0,'DefaultLegendInterpreter','latex'); % change the legend interpreter
 set(0,'DefaultAxesTickLabelInterpreter','latex'); % change the tick interpreter
@@ -25,7 +25,7 @@ R = 0.1;
 Klqr = -dlqr(A,B,Q,R); % please keep in mind that a "minus" should be included
 K = design_p_c(2:3);
 iniCon = [-7; -2];
-N = 40;
+N = 40; % simulation period
 
 % bound (magnitude) of disturbances
 w_mag = 0;
@@ -87,7 +87,7 @@ for k = 1:n
         u_next(i) = mpc.solve(x_nom(:,i));
         u_bar(i) = mpc.solution_cache.u_nominal_seq(:,1);
         x_nom(:,i+1) = mpc.solution_cache.x_nominal_seq(:,2);
-        [x(:,i+1),~] = disturbance_system.propagate(x_nom(:,i), u_bar(i), w{k}(:,i)); % additive disturbance is considered inside the method 
+        [x(:,i+1),~] = disturbance_system.propagate(x_nom(:,i), u_next(i), w{k}(:,i)); % additive disturbance is considered inside the method 
         L(i) = x(:,i)'*Q*x(:,i)+u_next(:,i)'*R*u_next(:,i); % integrand
     end
     save(strcat(savedir_name,'state_',num2str(k),'_rand_disturbance.mat'),'x')
